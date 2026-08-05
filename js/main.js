@@ -55,7 +55,8 @@
   const canvas = qs("#film");
   const ctx = canvas.getContext("2d");
   const reduceMotion = matchMedia("(prefers-reduced-motion: reduce)").matches;
-  const isMobile = matchMedia("(max-width: 767px)").matches;
+  const mobileMQ = matchMedia("(max-width: 767px)");
+  let isMobile = mobileMQ.matches;
 
   let MANIFEST = null;
   let activePath = "ocean";
@@ -415,7 +416,50 @@
   /* ---------- boot ---------- */
   let lenis = null;
 
+  // frame tier for the current viewport; drops every cached bitmap and
+  // reloads the active clip when the mobile/desktop breakpoint flips
+  function applyViewportTier() {
+    const dpi = isMobile ? MANIFEST.mobile : MANIFEST.desktop;
+    canvas.width = dpi.w;
+    canvas.height = dpi.h;
+    for (const k of Object.keys(store)) {
+      store[k].bitmaps.forEach((b) => b && b.close?.());
+      delete store[k];
+    }
+    fetchQueue.length = 0;
+    state.dirty = true;
+    loadClip("opening");
+    prefetchNeighbors(state.clip);
+  }
+
+  function watchViewport() {
+    let t = null;
+    const onChange = () => {
+      clearTimeout(t);
+      t = setTimeout(() => {
+        const nowMobile = mobileMQ.matches;
+        if (nowMobile !== isMobile) {
+          isMobile = nowMobile;
+          applyViewportTier();
+        }
+        if (window.ScrollTrigger) ScrollTrigger.refresh();
+      }, 250);
+    };
+    window.addEventListener("resize", onChange);
+    mobileMQ.addEventListener?.("change", onChange);
+  }
+
   async function boot() {
+    // never trust a zero-size viewport (background prerender, hidden panes,
+    // restored sessions) — wait until the window has real dimensions
+    if (innerWidth === 0 || innerHeight === 0) {
+      await new Promise((resolve) => {
+        const tick = () => (innerWidth > 0 && innerHeight > 0) ? resolve() : setTimeout(tick, 120);
+        tick();
+      });
+      isMobile = mobileMQ.matches;
+    }
+
     avifOK = await detectAvif();
     MANIFEST = await fetch("manifest/frames.json").then((r) => r.json()).catch(() => null);
     if (!MANIFEST) {
@@ -459,6 +503,7 @@
 
     // default path already built; wire switch link
     setPathSwitchOnly();
+    watchViewport();
   }
 
   function setPathSwitchOnly() {
