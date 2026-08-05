@@ -292,12 +292,12 @@
       band.style.height = (Number(band.dataset.vh) || 110) + "vh";
       // film scrub: the clip owns the canvas while its band crosses viewport
       // center — chained clips share boundary frames, so handoffs are seamless.
-      // The last band ends at absolute page bottom, otherwise the short footer
-      // leaves the final frames (the globe) unreachable.
+      // The last band completes at its own bottom edge so the globe locks in
+      // before the information zone begins.
       const st = ScrollTrigger.create({
         trigger: band,
         start: "top 50%",
-        end: band === lastBand ? "max" : "bottom 50%",
+        end: band === lastBand ? "bottom bottom" : "bottom 50%",
         scrub: 0.4,
         onUpdate: (self) => {
           const s = store[clip];
@@ -339,6 +339,15 @@
       onLeaveBack: () => { canvas.classList.remove("on"); qs("#scrim").classList.remove("on"); hud.el.classList.remove("on"); },
     });
     triggers.push(gateEnd);
+
+    // the HUD belongs to the film — retire it in the information zone
+    const infoZone = ScrollTrigger.create({
+      trigger: "#info",
+      start: "top 60%",
+      onEnter: () => hud.el.classList.remove("on"),
+      onLeaveBack: () => hud.el.classList.add("on"),
+    });
+    triggers.push(infoZone);
 
     // progress spine
     const spine = gsap.to("#spine-fill", {

@@ -416,6 +416,183 @@ h1, h2 {
   transform: scaleY(0);
 }
 
+/* ---------- information zone ---------- */
+#info {
+  position: relative;
+  background: var(--ink);
+  border-top: 1px solid var(--hairline);
+}
+
+.info-sec {
+  padding: clamp(64px, 10vh, 120px) clamp(24px, 8vw, 140px);
+  border-bottom: 1px solid var(--hairline);
+  max-width: 1360px;
+}
+
+.info-head { margin-bottom: clamp(28px, 4vh, 48px); }
+
+.info-title {
+  font-size: clamp(30px, 3.8vw, 56px);
+  font-weight: 700;
+  letter-spacing: -0.015em;
+  line-height: 1;
+}
+
+.info-sub {
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  margin-bottom: 12px;
+  color: var(--white);
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(32px, 5vw, 80px);
+  align-items: start;
+}
+.info-grid.four { grid-template-columns: repeat(4, 1fr); gap: clamp(20px, 3vw, 48px); }
+
+.info-body {
+  font-size: 15px;
+  line-height: 1.65;
+  color: var(--grey);
+  max-width: 52ch;
+}
+.info-body strong { color: var(--white); font-weight: 500; }
+.info-body.wide { margin-top: clamp(28px, 4vh, 44px); max-width: 70ch; }
+
+.info-note {
+  margin-top: 14px;
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--grey-dim);
+}
+
+.spec-table {
+  width: 100%;
+  margin-top: 18px;
+  border-collapse: collapse;
+  font-size: 13.5px;
+}
+.spec-table th {
+  text-align: left;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--grey-dim);
+  padding: 0 14px 10px 0;
+  border-bottom: 1px solid var(--hairline);
+}
+.spec-table td {
+  padding: 12px 14px 12px 0;
+  border-bottom: 1px solid var(--hairline);
+  color: var(--grey);
+}
+.spec-table td:first-child {
+  font-family: var(--mono);
+  font-size: 12.5px;
+  letter-spacing: 0.08em;
+  color: var(--white);
+}
+.spec-table td:last-child { font-family: var(--mono); font-size: 12px; }
+
+.info-list { list-style: none; margin-top: 18px; }
+.info-list li {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 11px 0;
+  border-bottom: 1px solid var(--hairline);
+  font-size: 14px;
+}
+.info-list li .dim { color: var(--grey-dim); font-size: 12.5px; letter-spacing: 0.06em; }
+.info-list.contact li span:last-child { color: var(--white); }
+
+.check-list { list-style: none; margin-top: 20px; }
+.check-list li {
+  position: relative;
+  padding: 9px 0 9px 26px;
+  font-size: 14px;
+  color: var(--grey);
+}
+.check-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 15px;
+  width: 12px;
+  height: 7px;
+  border-left: 2px solid var(--gold);
+  border-bottom: 2px solid var(--gold);
+  transform: rotate(-45deg);
+}
+
+.trace-line { list-style: none; counter-reset: tl; margin-top: 20px; }
+.trace-line li {
+  position: relative;
+  padding: 12px 0 12px 34px;
+  border-left: 1px solid var(--hairline);
+  margin-left: 8px;
+}
+.trace-line li::before {
+  content: "";
+  position: absolute;
+  left: -5px;
+  top: 19px;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--ink);
+  border: 2px solid var(--grey-dim);
+}
+.trace-line li:nth-child(4)::before { border-color: var(--gold); background: var(--gold); }
+.trace-line li b {
+  display: block;
+  font-family: var(--mono);
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.2em;
+  color: var(--white);
+}
+.trace-line li span {
+  display: block;
+  margin-top: 3px;
+  font-size: 13px;
+  color: var(--grey);
+}
+
+.fact .fact-v {
+  font-size: clamp(28px, 3vw, 44px);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+.fact .fact-k {
+  margin-top: 8px;
+  font-size: 11.5px;
+  line-height: 1.5;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--grey);
+}
+
+.cta-row.tight { margin-top: 28px; }
+
+.foot-nav { display: flex; gap: 22px; }
+.foot-nav a {
+  color: var(--grey);
+  text-decoration: none;
+  letter-spacing: 0.14em;
+}
+.foot-nav a:hover { color: var(--white); }
+
+@media (max-width: 767px) {
+  .info-grid, .info-grid.four { grid-template-columns: 1fr; }
+}
+
 /* ---------- footer ---------- */
 footer {
   position: relative;
