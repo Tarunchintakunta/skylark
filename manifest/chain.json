@@ -1,0 +1,212 @@
+{
+  "project": "SKYLARK EXIM \u2014 TWO ORIGINS. ONE STANDARD.",
+  "model": "seedance_2_0",
+  "video_params": {
+    "duration": 8,
+    "aspect_ratio": "16:9",
+    "mode": "std",
+    "generate_audio": false,
+    "draft_resolution": "720p",
+    "final_resolution": "1080p"
+  },
+  "note": "Higgsfield Seedance 2.0 exposes no seed parameter; reproducibility is by prompt + chained start/end frames. 1080p pass re-chains from fresh 1080p frames per workflow.",
+  "style_suffix": "Anamorphic widescreen, shallow depth of field, 35mm film grain, natural motivated lighting, documentary realism, muted cold grade, no text, no logos, no faces.",
+  "avoid_clause": "Avoid: cartoon, CGI plastic look, oversaturated colours, orange-teal grade, lens flare, text, watermark, distorted hands, extra fingers, morphing objects, melting geometry, deformed animals, jitter.",
+  "stills": {
+    "hero": {
+      "role": "world reference passed as image_references to every clip",
+      "model": "cinematic_studio_2_5",
+      "job_id": "1e490228-8457-4818-bdee-45e57789c522",
+      "file": "assets/stills/hero.png",
+      "status": "accepted",
+      "prompt": "Visakhapatnam fishing harbour at 4am in light rain, shot from water level, fishing trawlers in silhouette, red and green navigation lights burning across black water, one sodium vapour lamp glowing over a wet concrete dock, crushed ice and wet steel in the foreground, blue-black palette, anamorphic widescreen, shallow depth of field, 35mm film grain, natural motivated lighting, documentary realism, muted cold grade, no text, no logos, no faces. Avoid: cartoon, CGI plastic look, oversaturated colours, orange-teal grade, lens flare, text, watermark."
+    },
+    "anchor2": {
+      "role": "end_image for A4 and B3; start_image for T1 \u2014 the convergence frame",
+      "model": "cinematic_studio_2_5",
+      "job_id": "a9c53800-ef53-4c9d-9449-29f2dc5191b6",
+      "file": "assets/stills/anchor2.png",
+      "status": "accepted",
+      "prompt": "Exterior of a seafood processing plant intake door at early morning before dawn, a roller shutter door half open, clinical white fluorescent light spilling from inside onto wet concrete, an insulated refrigerated truck backed up to the loading bay, light rain sheen on every surface, blue-black pre-dawn palette with the cold white doorway as the only bright source, anamorphic widescreen, shallow depth of field, 35mm film grain, natural motivated lighting, documentary realism, muted cold grade, no text, no logos, no faces, no people. Avoid: cartoon, CGI plastic look, oversaturated colours, orange-teal grade, lens flare, text, watermark."
+    },
+    "globe": {
+      "model": "cinematic_studio_2_5",
+      "job_id": "c99cc738-c4ff-48a6-8c69-ab20506e4c52",
+      "file": "assets/stills/globe.png",
+      "status": "accepted",
+      "role": "end_image for T4 final; site closing frame"
+    }
+  },
+  "chain_rules": {
+    "anchor1": "final frame of OPENING \u2192 start_image of A1 and B1",
+    "anchor2": "end_image of A4 and B3; start_image of T1",
+    "within_branch": "each clip's final frame \u2192 next clip's start_image",
+    "trunk": "T1 starts from anchor2; T2..T4 chain from previous final frames"
+  },
+  "clips": {
+    "opening": {
+      "draft_720": {
+        "job_id": "d6b6fecb-a0b4-4f82-bd42-6c5ecd78fb89",
+        "status": "accepted",
+        "note": "re-rolled: v1 with hero image_references cloned the hero scene; v2 pure t2v",
+        "end_frame_media": "450f3f2c-1ee4-45cb-b49b-23fd39cd4103"
+      },
+      "final_1080": {
+        "job_id": "b4f945b2-000f-4cbb-ae6d-d0b2689100c8",
+        "status": "accepted"
+      },
+      "prompt": "Camera fully submerged in dark green-black seawater, shafts of pale light filtering down from above, fine particulate drifting through the light beams. The camera rises slowly toward the surface, breaks the surface in slow motion with water sheeting off the lens, and settles just above the waterline facing a dark coastline before dawn: a fishing harbour with red and green lights on the left, the flat dark geometry of aquaculture pond bunds on the right, light rain on black water. One continuous unbroken camera move, slow and controlled, no cuts. Anamorphic widescreen, shallow depth of field, 35mm film grain, natural motivated lighting, documentary realism, muted cold grade, no text, no logos, no faces. Avoid: cartoon, CGI plastic look, oversaturated colours, orange-teal grade, lens flare, text, watermark, morphing objects, melting geometry, jitter."
+    },
+    "a1": {
+      "draft_720": {
+        "job_id": "8b1c0668-2348-47ba-b707-81ab3f00ab8b",
+        "status": "accepted",
+        "note": "re-rolled: v1 built dock inside pond world; v2 uses turn-and-cross transition + hero as image_references",
+        "end_frame_media": "4f260aa3-63ae-4a59-bb1e-72849378388f"
+      },
+      "final_1080": {
+        "job_id": "b85302e2-70af-4e05-87f4-7f7bb4802e5d",
+        "status": "accepted"
+      },
+      "prompt": "The camera turns left away from the pond embankments and accelerates low across open black water into darkness and light rain, the flat pond geometry falling away behind, only black sea and rain for a moment. Then out of the dark a fishing harbour resolves ahead: steel trawlers moored along a wet concrete dock at 4am, red and green navigation lights burning, a sodium vapour dock lamp glowing orange over wet concrete, mooring ropes pulled taut, deck floodlights harsh on the black water, crushed ice scattered over wet steel. The camera settles into a low forward glide along the dock past the trawler hull. One continuous camera move, no cuts."
+    },
+    "a2": {
+      "draft_720": {
+        "job_id": "acd3ff6a-196c-418b-a2ff-5744d8ed1a1a",
+        "status": "accepted",
+        "end_frame_media": "20d19c3e-3cf0-4d2e-8a42-e3f5a6ebdf07"
+      },
+      "final_1080": {
+        "job_id": "2f11931d-41d3-40e5-95f8-b18983fb853f",
+        "status": "accepted"
+      },
+      "prompt": "Handheld camera on the deck of a longline fishing vessel on the open sea before dawn, heavy swell, the deck pitching under harsh floodlights, sea spray hitting the lens, the dark horizon tilting with the swell, a long fishing line running out over the stern into black water, cold blue-black ocean night. One continuous handheld shot, no cuts."
+    },
+    "a3": {
+      "draft_720": {
+        "job_id": "3425a546-bfc8-434e-bf47-2eeb36aca974",
+        "status": "generating"
+      },
+      "final_1080": {
+        "job_id": "d329dddd-c6a1-4be9-b8a5-c4cd3a3e9c0f",
+        "status": "accepted"
+      },
+      "prompt": "On the working deck of a fishing vessel under floodlights before dawn: large silver-blue pelagic fish, tuna and mackerel, are lifted over the gunwale, seawater pouring off their flanks, and laid straight into an open ice hold as crushed ice cascades down from a chute, breath steaming in the cold air, gloved crew seen only from behind at a distance, urgent professional work, no gore. One continuous shot, no cuts."
+    },
+    "a4": {
+      "draft_720": {},
+      "final_1080": {
+        "job_id": "e0527ab5-cd21-4c8c-8ef6-742fcd289685",
+        "status": "accepted",
+        "note": "convergence on anchor2 verified"
+      },
+      "end_image": "anchor2",
+      "prompt": "Insulated crates of iced fish loaded into the back of a refrigerated truck at first light, the tailgate closing, then the truck's headlights sweeping a wet coastal road in light rain, and finally the truck reversing toward a seafood plant loading bay where clinical white light spills from a half-open roller shutter door onto wet concrete. One continuous sequence, ending square on the lit intake door."
+    },
+    "b1": {
+      "draft_720": {
+        "job_id": "47f343b0-a5f3-49cc-af8f-ac234c2458f3",
+        "status": "accepted",
+        "end_frame_media": "09be0775-b7e5-44aa-9a65-9b8cf8311996"
+      },
+      "final_1080": {
+        "job_id": "73f2c47a-cdd8-4fa4-bad3-ef075e6bbac3",
+        "status": "accepted"
+      },
+      "prompt": "Slow aerial glide over coastal aquaculture ponds at first light, rectangular pond bunds arranged in an ordered grid, still water reflecting a pale pre-dawn sky, paddlewheel aerators throwing arcs of white water, low mist drifting over the surface, the camera descending steadily toward one pond edge. One continuous descending move, no cuts."
+    },
+    "b2": {
+      "draft_720": {
+        "job_id": "cf5a110d-ad85-42d2-a0f6-66b8051b4c41",
+        "status": "accepted",
+        "end_frame_media": "13f2721a-4eeb-4e36-8566-f93e93851c6b"
+      },
+      "final_1080": {
+        "job_id": "1ebd7bf8-cc8c-4fea-95e6-6ee0506c93af",
+        "status": "accepted"
+      },
+      "prompt": "At the edge of an aquaculture pond at dawn under overcast even light: a gloved hand draws a water sample into a small clear vial, a handheld digital water-quality meter glows with a reading, a weathered logbook lies open on a wooden crate with ruled columns of handwritten entries, the writing soft and out of focus, methodical and calm, an inspection not a harvest. One continuous shot, no cuts."
+    },
+    "b3": {
+      "draft_720": {
+        "job_id": "f70860ad-0cec-4419-9e97-8463aba47e47",
+        "status": "accepted",
+        "note": "converges on anchor2 \u2014 verified visually"
+      },
+      "final_1080": {
+        "job_id": "2d4e2a66-459d-4d08-a7a2-3674dee1a95c",
+        "status": "accepted",
+        "note": "convergence on anchor2 verified"
+      },
+      "end_image": "anchor2",
+      "prompt": "Harvest at an aquaculture pond bund at early morning: shrimp go straight into crates of crushed ice, a printed batch tag is pressed onto a crate with its print soft and out of focus, crates are loaded onto a small refrigerated truck, the truck moves off along the dirt track between rectangular ponds and reverses toward a seafood plant loading bay where clinical white light spills from a half-open roller shutter door. One continuous sequence, ending square on the lit intake door."
+    },
+    "t1": {
+      "draft_720": {
+        "job_id": "2dde2a83-37e1-45fb-9f2e-8c21b07491dc",
+        "status": "generating"
+      },
+      "final_1080": {
+        "job_id": "fc6da3bc-4c81-4ccc-96be-f24d1e906bbd",
+        "status": "accepted",
+        "note": "signature threshold move works at 1080"
+      },
+      "start_image": "anchor2",
+      "signature": true,
+      "prompt": "One continuous camera move that starts outside a seafood plant intake door before dawn and passes through the doorway into the intake bay, the light changing on the move from blue-black wet morning to clinical white fluorescent with no cut. Inside: stainless steel tables, a bright inspection lamp, a worker in white coat, hairnet and gloves seen from behind turning seafood product to the light, two piles forming on the steel table, accepted and rejected, clinical and exact, cold white light. No cuts."
+    },
+    "t2": {
+      "draft_720": {
+        "job_id": "94105b7f-c2a9-4d42-a64e-30a73091d005",
+        "status": "accepted"
+      },
+      "final_1080": {
+        "job_id": "8dc6dafb-818e-45b0-b05e-dca1052803fb",
+        "status": "accepted"
+      },
+      "prompt": "Continuous dolly down a seafood processing hall: clean water runs hard over product on stainless steel lines and drains away clear, graded product separates into parallel channels, then the camera turns left through a doorway into a residue-testing laboratory, fluorescent and sterile, instruments on a white bench, a vial in a rack, an analyser screen glowing, a printed certificate lying on the bench with its text soft and illegible, cold white light, nothing decorative. One continuous move, no cuts."
+    },
+    "t3": {
+      "draft_720": {
+        "job_id": "8e53fd14-7c5b-447e-a8d2-92f4a7825b19",
+        "status": "accepted",
+        "note": "salmon-ish portions on belt; fixed in 1080 prompt"
+      },
+      "final_1080": {
+        "job_id": "c456f88e-e9ea-491f-8685-cf3150981f01",
+        "status": "accepted",
+        "note": "species fixed: whole shrimp + white fish portions on IQF belt"
+      },
+      "prompt": "The camera moves into an IQF freezing tunnel, frost blooming at the edges of the lens, individual pieces of seafood separated in fine ice crystal on a moving belt, freezing vapour rolling through beams of white light, glaze mist meeting frozen surfaces in slow motion, then the camera emerges into a cold store aisle: white cartons stacked on orange and blue pallet racking receding into the distance, breath fog hanging in the air, a small digital display glowing minus twenty, every surface rimed with frost. One continuous move, no cuts."
+    },
+    "t4": {
+      "draft_720": {
+        "job_id": "4235c6d0-77e4-4db1-8ec1-28fd38635086",
+        "status": "accepted",
+        "note": "globe centred on Americas; 1080 uses globe still as end_image"
+      },
+      "final_1080": {
+        "job_id": "d834a634-795b-4a6e-836b-5205979cc4cf",
+        "status": "accepted",
+        "note": "ends on globe still (Bay of Bengal centred, gold trails) via end_image"
+      },
+      "prompt": "The camera reverses out of an open refrigerated shipping container as the last pallets are loaded, the container doors swing shut and a gloved hand pulls the lock bar down, then the camera pulls back and lifts fast over a port container yard at dawn with a container ship at berth, rising through cloud until the curve of the earth appears, settling on a slowly rotating planet Earth seen from space with the Bay of Bengal glowing at the centre and thin gold trails arcing outward toward Europe, Japan, the Arabian Gulf and North America, deep black space. One continuous accelerating pull-back, no cuts."
+    }
+  },
+  "credits": {
+    "start_balance": 1898,
+    "cost_720_clip": 36,
+    "cost_1080_clip": 72,
+    "end_balance": 488,
+    "total_spent": 1410,
+    "breakdown": "15 draft clips @36 (12 + 3 re-rolls: opening, a1, t1) = 540; 12 master clips @72 = 864; 3 stills = 6"
+  },
+  "media_ids": {
+    "anchor1": "450f3f2c-1ee4-45cb-b49b-23fd39cd4103",
+    "a1_end": "4f260aa3-63ae-4a59-bb1e-72849378388f",
+    "a2_end": "20d19c3e-3cf0-4d2e-8a42-e3f5a6ebdf07",
+    "b1_end": "09be0775-b7e5-44aa-9a65-9b8cf8311996",
+    "b2_end": "13f2721a-4eeb-4e36-8566-f93e93851c6b"
+  },
+  "status": "1080p master chain complete \u2014 all 12 clips accepted, both branches converge on anchor2, trunk ends on globe still"
+}
