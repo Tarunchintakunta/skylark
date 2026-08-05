@@ -645,16 +645,38 @@ footer .fm { color: var(--grey); }
   .door .name { font-size: 26px; }
   .door .hint { font-size: 11.5px; }
 
+  /* copy spans the full width on phones — the desktop left-edge scrim
+     can't carry it, so darken the whole frame and panel the type */
+  #scrim {
+    background:
+      linear-gradient(0deg, rgba(4, 7, 11, 0.82) 0%, rgba(4, 7, 11, 0.5) 40%, rgba(4, 7, 11, 0.38) 75%, rgba(4, 7, 11, 0.55) 100%);
+  }
+  .over-copy .copy-inner {
+    background: rgba(4, 7, 11, 0.66);
+    border-left: 1px solid var(--hairline);
+    padding: 20px 16px;
+  }
+  .over-copy .lede { color: #b9c6cf; }
+
+  /* HUD: a compact solid instrument chip that can't melt into copy */
   #hud {
-    width: 132px;
+    width: auto;
+    min-width: 118px;
     font-size: 9.5px;
     right: 10px;
     top: auto;
-    bottom: 14px;
+    bottom: 12px;
     transform: none;
+    padding: 10px 12px;
+    background: rgba(4, 7, 11, 0.85);
+    border: 1px solid var(--hairline);
   }
   #hud .v.big { font-size: 16px; }
+  #hud .row:first-child,          /* brand row */
+  #hud .row:nth-of-type(4),       /* batch id */
+  #hud .rule,
   #hud-branch { display: none; }
+  #hud .stamp { margin-top: 8px; }
   .doors { grid-template-columns: 1fr; }
   .copy-slab { padding: 0 22px; }
   #sec-globe .copy-slab { align-items: center; padding-bottom: 0; }
