@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SKYLARK EXIM — Two Origins. One Standard.</title>
+  <meta name="description" content="Seafood exporter, Visakhapatnam. Wild-caught fish and farmed shrimp from the Bay of Bengal — one cold chain, one residue standard, shipped to Europe, Japan, the Gulf and North America.">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <meta property="og:title" content="SKYLARK EXIM — Two Origins. One Standard.">
+  <meta property="og:description" content="Wild-caught fish and farmed shrimp from the Bay of Bengal. One cold chain, one residue standard — Europe, Japan, the Gulf, North America.">
+  <meta property="og:image" content="assets/og.jpg">
+  <meta property="og:type" content="website">
+  <link rel="preload" href="fonts/SpaceGrotesk-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/main.css?v=10">
+</head>
+<body>
+
+  <canvas id="film" width="1600" height="900" aria-hidden="true"></canvas>
+  <div id="scrim" aria-hidden="true"></div>
+  <div id="grain" aria-hidden="true"></div>
+
+  <!-- cold-chain readout -->
+  <aside id="hud" aria-hidden="true">
+    <div class="row"><span class="k">Skylark</span><span class="k">Exim</span></div>
+    <div class="rule"></div>
+    <div class="v big" id="hud-temp">+28.0°C</div>
+    <div class="rule"></div>
+    <div class="row"><span class="k">Zone</span><span class="zone" id="hud-zone">ORIGIN</span></div>
+    <div class="row"><span class="k">Step</span><span class="v" id="hud-step">01 / 09</span></div>
+    <div class="row"><span class="k">Batch</span><span class="v" id="hud-batch">VZ-2608-A</span></div>
+    <div class="rule"></div>
+    <div id="hud-branch">
+      <div class="row"><span class="k" id="hb-k1">Vessel</span><span class="v" id="hb-v1">—</span></div>
+      <div class="row"><span class="k" id="hb-k2">Landed</span><span class="v" id="hb-v2">—</span></div>
+      <div class="row"><span class="k" id="hb-k3">Off water</span><span class="v" id="hb-v3">—</span></div>
+    </div>
+    <div class="stamp" id="hud-stamp">RESIDUE: —</div>
+  </aside>
+
+  <div id="spine" aria-hidden="true"><div class="fill" id="spine-fill"></div></div>
+
+  <main>
+
+    <!-- 0 · THE FORK -->
+    <section id="gate">
+      <div class="brand">
+        <span class="mark">SKYLARK EXIM</span>
+        <span class="sub">Visakhapatnam · India</span>
+      </div>
+      <div>
+        <p class="eyebrow"><span class="tick">●</span> Seafood export · Bay of Bengal</p>
+        <h1 class="display">TWO ORIGINS.<span class="l2">ONE STANDARD.</span></h1>
+        <p class="lede">Wild-caught fish from the open Bay. Farmed shrimp from the pond
+        grids of the Andhra coast. Two ways into the water — <strong>one cold chain, one residue
+        test, one door to the world.</strong></p>
+      </div>
+      <div class="doors" role="group" aria-label="Choose your origin">
+        <button class="door" id="door-ocean" data-path="ocean">
+          <span class="num">01 /</span>
+          <span class="name">THE OCEAN</span>
+          <span class="hint">Wild catch · longline &amp; trawl</span>
+          <span class="go">ENTER →</span>
+        </button>
+        <button class="door" id="door-pond" data-path="pond">
+          <span class="num">02 /</span>
+          <span class="name">THE POND</span>
+          <span class="hint">Farmed shrimp · recorded from day one</span>
+          <span class="go">ENTER →</span>
+        </button>
+      </div>
+      <p class="gate-foot">Choose an origin — or scroll. Both roads end at the same door.</p>
+    </section>
+
+    <!-- 1 · OPENING — the rise -->
+    <section class="band" id="sec-opening" data-clip="opening" data-vh="60"></section>
+
+    <!-- 2 · BRANCH — built by JS from the chosen path -->
+    <div id="branch-root"></div>
+
+    <!-- 3 · INTAKE — T1, the threshold -->
+    <section class="band" id="sec-intake" data-clip="t1" data-vh="95">
+      <div class="copy-slab over-copy">
+        <div class="copy-inner">
+          <p class="eyebrow">03 · Intake — the same door</p>
+          <h2 class="headline">Both origins arrive at the same door.</h2>
+          <p class="lede">Ocean or pond, every crate crosses one threshold and faces
+          the same inspection before it goes further. <strong>Accepted, or rejected.</strong></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4 · THE LAB — commercial centre -->
+    <section class="band cv-auto" id="sec-lab" data-clip="t2" data-vh="120">
+      <div class="copy-slab over-copy">
+        <div class="copy-inner">
+          <p class="eyebrow">04 · The lab — one standard</p>
+          <h2 class="headline">Every batch tested. No exceptions.</h2>
+          <p class="lede">Tested against <strong>EU and US residue limits — whichever is
+          stricter.</strong> The certificate travels with the carton. Full HACCP protocol,
+          end to end.</p>
+          <div class="chips">
+            <span class="chip">HOSO</span>
+            <span class="chip">HLSO</span>
+            <span class="chip">PUD</span>
+            <span class="chip">PTO</span>
+            <span class="chip dim">BLOCK / IQF</span>
+          </div>
+          <p class="grades">GRADES&nbsp;&nbsp;<b>10/20</b> · <b>21/25</b> · <b>26/30</b> · <b>31/40</b> · <b>41/50</b></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5 · COLD — where time stops -->
+    <section class="band" id="sec-cold" data-clip="t3" data-vh="85">
+      <div class="copy-slab over-copy">
+        <div class="copy-inner">
+          <p class="eyebrow">05 · Deep cold</p>
+          <h2 class="headline">Where time stops.</h2>
+          <div class="statline">
+            <div class="stat"><div class="v">−20°C</div><div class="k">Core, held</div></div>
+            <div class="stat"><div class="v">700</div><div class="k">Pallet positions</div></div>
+            <div class="stat"><div class="v">0</div><div class="k">Breaks in the chain</div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6 · EXPORT — the globe -->
+    <section class="band" id="sec-globe" data-clip="t4" data-vh="120">
+      <div class="copy-slab over-copy">
+        <div class="copy-inner">
+          <p class="eyebrow">06 · Export</p>
+          <h2 class="headline">From the Bay of Bengal to the world's table.</h2>
+          <p class="lede">Europe. Japan. The Gulf. North America. <strong>Every step of the way
+          protects a promise.</strong></p>
+          <div class="cta-row">
+            <a class="btn" href="mailto:exports@skylarkexim.example?subject=Specification%20request">Request specifications</a>
+            <a class="btn ghost" href="assets/skylark-product-sheet.pdf" download="SKYLARK-EXIM-Product-Sheet.pdf" id="btn-sheet">Download product sheet</a>
+          </div>
+          <p class="switch-line" id="switch-line">
+            You came by sea. <a id="switch-path">See the pond →</a>
+          </p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <span class="fm">SKYLARK EXIM — Visakhapatnam, Andhra Pradesh, India</span>
+    <span>EU · Japan · GCC · North America</span>
+    <span>© 2026 Skylark Exim</span>
+  </footer>
+
+  <script src="js/vendor/lenis.min.js"></script>
+  <script src="js/vendor/gsap.min.js"></script>
+  <script src="js/vendor/ScrollTrigger.min.js"></script>
+  <script src="js/main.js?v=10"></script>
+</body>
+</html>
