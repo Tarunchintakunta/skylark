@@ -186,9 +186,9 @@
         "note": "globe centred on Americas; 1080 uses globe still as end_image"
       },
       "final_1080": {
-        "job_id": "d834a634-795b-4a6e-836b-5205979cc4cf",
+        "job_id": "b8afa397-21a7-4fb1-963e-474b5369aefb",
         "status": "accepted",
-        "note": "ends on globe still (Bay of Bengal centred, gold trails) via end_image"
+        "note": "v2 \u2014 12s regeneration for a smoother port-to-globe ascent (gradual atmospheric transition beat); ends on globe still via end_image; 97 scrub frames"
       },
       "prompt": "The camera reverses out of an open refrigerated shipping container as the last pallets are loaded, the container doors swing shut and a gloved hand pulls the lock bar down, then the camera pulls back and lifts fast over a port container yard at dawn with a container ship at berth, rising through cloud until the curve of the earth appears, settling on a slowly rotating planet Earth seen from space with the Bay of Bengal glowing at the centre and thin gold trails arcing outward toward Europe, Japan, the Arabian Gulf and North America, deep black space. One continuous accelerating pull-back, no cuts."
     }
@@ -197,9 +197,9 @@
     "start_balance": 1898,
     "cost_720_clip": 36,
     "cost_1080_clip": 72,
-    "end_balance": 488,
-    "total_spent": 1410,
-    "breakdown": "15 draft clips @36 (12 + 3 re-rolls: opening, a1, t1) = 540; 12 master clips @72 = 864; 3 stills = 6"
+    "end_balance": 380,
+    "total_spent": 1518,
+    "breakdown": "15 draft clips @36 = 540; 12 master clips @72 = 864; T4 v2 12s @108; 3 stills = 6"
   },
   "media_ids": {
     "anchor1": "450f3f2c-1ee4-45cb-b49b-23fd39cd4103",
