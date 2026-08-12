@@ -91,18 +91,18 @@
         "status": "generating"
       },
       "final_1080": {
-        "job_id": "f44cefb4-d594-49bc-a8ec-a5416a312f76",
+        "job_id": "bf23a2ee-bf8f-4709-820d-afe6e6c17999",
         "status": "accepted",
-        "note": "v3 grounded realism re-roll \u2014 Indian crew inside the boat, true-to-scale yellowfin into the ice hold, swordfish bedded in ice; end locked to prior a3 end frame so a4 junction is preserved. v2 rejected: oversized fish + figure outside the hull."
+        "note": "v4 anti-merge re-roll \u2014 single fish in motion, swordfish (distinct body) as hold neighbour, explicit no-merge negatives; verified frame-by-frame through the lowering window. v3 rejected: lowered tuna merged with bedded fish."
       },
       "prompt": "Broad daylight on the open sea, far from land, the deck pitching in deep blue swell under full sun: Indian fishermen haul the longline and a large swordfish comes over the gunwale \u2014 long smooth bill, whole and intact \u2014 followed by fat yellowfin tuna, seawater bursting off their flanks in sun-backlit spray, the fish sliding whole into the open ice hold as crushed ice cascades over them. Urgent, exhilarating, professional, no gore. One continuous shot, no cuts."
     },
     "a4": {
       "draft_720": {},
       "final_1080": {
-        "job_id": "4007ae3c-77db-49e2-ac92-54c69197f2ca",
+        "job_id": "0795b66a-cd7f-4614-8651-3b73771ab297",
         "status": "accepted",
-        "note": "v2 \u2014 golden run home, dusk transit, REVERSE dock at the lit bay at night; convergence on anchor2 verified"
+        "note": "v3 12s \u2014 crates through the open rear at golden hour, sunset road, REAR-FIRST reverse dock at the lit bay (cab always away from the building), converges on anchor2. v2 rejected: approached nose-first."
       },
       "end_image": "anchor2",
       "prompt": "The loaded fishing vessel runs home through golden afternoon light; crates of iced fish load into a refrigerated truck as the sun drops; the truck takes the coastal road from gold through dusk into night, then swings past the loading bay, stops, and reverses slowly backwards toward the lit intake door \u2014 white reverse lamps glowing, a worker guiding it back with hand signals \u2014 settling backed up against the bay. One continuous sequence, day fading to night, ending square on the lit intake door."
@@ -211,8 +211,8 @@
     "start_balance": 1898,
     "cost_720_clip": 36,
     "cost_1080_clip": 72,
-    "end_balance": 484,
-    "total_spent": 1914,
+    "end_balance": 232,
+    "total_spent": 2166,
     "breakdown": "draft pass 540; master pass 864; T4 12s v2 108; daylight ocean arc a1-a4 288; t2s 12s shrimp 108; stills 6"
   },
   "media_ids": {
