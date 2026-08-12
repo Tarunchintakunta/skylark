@@ -134,6 +134,7 @@
     // then full-res in batches of 40
     let batchStart = 0;
     const batch = () => {
+      if (!store[clip]) return;            // evicted mid-stream, stop feeding it
       const end = Math.min(batchStart + 40, count);
       for (let i = batchStart; i < end; i++) enqueue(clip, i, false);
       batchStart = end;
@@ -142,6 +143,36 @@
     };
     batch();
     pump();
+  }
+
+  /* Decoded frames are uncompressed RGBA: a 1600x900 ImageBitmap is 5.5 MB, so
+     one 65-frame clip costs ~357 MB. Nothing used to release them during a
+     scroll, so walking the whole page left all 12 clips resident - over 4 GB.
+     That is what stalls the tab and leaves frames stuck. Keep a sliding window
+     of clips around the playhead and hand the rest back. */
+  const CLIP_WINDOW = 1; // clips retained either side of the current one
+
+  function releaseClip(clip) {
+    const s = store[clip];
+    if (!s) return;
+    s.bitmaps.forEach((b) => b && b.close?.());
+    delete store[clip];
+  }
+
+  function evictDistantClips(clip) {
+    const order = PATHS[activePath].clips;
+    const i = order.indexOf(clip);
+    if (i < 0) return;
+    const keep = new Set(["opening", clip]);   // opening is the boot frame, cheap to hold
+    for (let d = 1; d <= CLIP_WINDOW; d++) {
+      if (order[i + d]) keep.add(order[i + d]);
+      if (order[i - d]) keep.add(order[i - d]);
+    }
+    for (const k of Object.keys(store)) if (!keep.has(k)) releaseClip(k);
+    // drop queued work for clips that are no longer resident
+    for (let n = fetchQueue.length - 1; n >= 0; n--) {
+      if (!store[fetchQueue[n].clip]) fetchQueue.splice(n, 1);
+    }
   }
 
   function nearestLoaded(clip, i) {
@@ -365,6 +396,7 @@
     const order = PATHS[activePath].clips;
     const i = order.indexOf(clip);
     if (i >= 0) {
+      evictDistantClips(clip);   // release before allocating, so the two never overlap
       loadClip(clip);
       if (order[i + 1]) loadClip(order[i + 1]);
       if (order[i - 1]) loadClip(order[i - 1]);
@@ -422,10 +454,7 @@
     const dpi = isMobile ? MANIFEST.mobile : MANIFEST.desktop;
     canvas.width = dpi.w;
     canvas.height = dpi.h;
-    for (const k of Object.keys(store)) {
-      store[k].bitmaps.forEach((b) => b && b.close?.());
-      delete store[k];
-    }
+    for (const k of Object.keys(store)) releaseClip(k);
     fetchQueue.length = 0;
     state.dirty = true;
     loadClip("opening");
