@@ -76,7 +76,7 @@ y = row("Origin record", "Pond ID, feed log, input record, harvest date — per 
 
 y -= 6 * mm
 y = section("Wild-caught sea fish — Bay of Bengal", y)
-y = row("Species", "Yellowfin tuna · Indian mackerel · Ribbonfish · Croaker · Cuttlefish", y)
+y = row("Species", "Yellowfin tuna · Swordfish · Indian mackerel · Ribbonfish · Croaker · Cuttlefish", y)
 y = row("Handling", "On ice within minutes of the water · landed same morning", y)
 y = row("Formats", "Whole round · Gilled & gutted · Fillet · IQF on request", y)
 

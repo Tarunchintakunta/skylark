@@ -16,7 +16,7 @@ VIDEO_DIR="${1:?video dir}"
 OUT="${2:?out root}"
 cd "$(dirname "$0")/.."
 
-CLIPS=(opening a1 a2 a3 a4 b1 b2 b3 t1 t2 t3 t4)
+CLIPS=(opening a1 a2 a3 a4 b1 b2 b3 t1 t2 t2s t3 t4)
 mkdir -p "$OUT/d" "$OUT/m" assets/keyframes manifest
 
 json_desktop="" ; json_mobile=""

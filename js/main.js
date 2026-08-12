@@ -6,9 +6,12 @@
 (() => {
   "use strict";
 
+  // the trunk splits for one beat: fish processing (t2) on the ocean path,
+  // the four-format shrimp line (t2s) on the pond path — both re-converge
+  // on the same lab-bench frame before freezing
   const PATHS = {
-    ocean: { clips: ["opening", "a1", "a2", "a3", "a4", "t1", "t2", "t3", "t4"] },
-    pond:  { clips: ["opening", "b1", "b2", "b3", "t1", "t2", "t3", "t4"] },
+    ocean: { clips: ["opening", "a1", "a2", "a3", "a4", "t1", "t2", "t3", "t4"], lab: "t2" },
+    pond:  { clips: ["opening", "b1", "b2", "b3", "t1", "t2s", "t3", "t4"], lab: "t2s" },
   };
 
   // per-clip scroll band length (vh) and copy overlays for branch sections
@@ -18,7 +21,7 @@
       { clip: "a2", vh: 50, eyebrow: null, head: null, lede: null },
       { clip: "a3", vh: 95, eyebrow: "01 · The ocean — the hold",
         head: "What the ocean gives, it gives once.",
-        lede: "Longline and trawl on the open Bay, before dawn. Straight over the gunwale, on ice within minutes of the water. The clock starts at the surface." },
+        lede: "Swordfish and yellowfin off the open Bay, in full daylight. Straight over the gunwale, on ice within minutes of the water. The clock starts at the surface." },
       { clip: "a4", vh: 40, eyebrow: null, head: null, lede: null },
     ],
     pond: [
@@ -42,6 +45,7 @@
     b3:      { zone: "TRANSIT", t0: 26,  t1: 2,   step: 5 },
     t1:      { zone: "INTAKE",  t0: 2,   t1: 0,   step: 6 },
     t2:      { zone: "PROCESS", t0: 0,   t1: 0,   step: 7 },
+    t2s:     { zone: "PROCESS", t0: 0,   t1: 0,   step: 7 },
     t3:      { zone: "COLD",    t0: -2,  t1: -20, step: 8 },
     t4:      { zone: "EXPORT",  t0: -20, t1: -20, step: 9 },
   };
@@ -409,6 +413,7 @@
     document.body.dataset.path = path;
     buildBranch(path);
     hudBranch(path);
+    qs("#sec-lab").dataset.clip = PATHS[path].lab;
     // switch line copy
     const sw = qs("#switch-line");
     sw.innerHTML = path === "ocean"
