@@ -41,7 +41,8 @@
     "anchor1": "final frame of OPENING \u2192 start_image of A1 and B1",
     "anchor2": "end_image of A4 and B3; start_image of T1",
     "within_branch": "each clip's final frame \u2192 next clip's start_image",
-    "trunk": "T1 starts from anchor2; T2..T4 chain from previous final frames"
+    "trunk": "T1 starts from anchor2; T2..T4 chain from previous final frames",
+    "trunk_split": "t2 (fish line) on the ocean path, t2s (shrimp four-format line) on the pond path; both converge on the same lab-bench frame before t3"
   },
   "clips": {
     "opening": {
@@ -65,10 +66,11 @@
         "end_frame_media": "4f260aa3-63ae-4a59-bb1e-72849378388f"
       },
       "final_1080": {
-        "job_id": "b85302e2-70af-4e05-87f4-7f7bb4802e5d",
-        "status": "accepted"
+        "job_id": "6431bd7c-efeb-49bb-8d74-b2ad51ee33c6",
+        "status": "accepted",
+        "note": "daylight v3 \u2014 dawn breaks into sunrise at the harbour, Indian fishermen loading ice, faces at mid distance"
       },
-      "prompt": "The camera turns left away from the pond embankments and accelerates low across open black water into darkness and light rain, the flat pond geometry falling away behind, only black sea and rain for a moment. Then out of the dark a fishing harbour resolves ahead: steel trawlers moored along a wet concrete dock at 4am, red and green navigation lights burning, a sodium vapour dock lamp glowing orange over wet concrete, mooring ropes pulled taut, deck floodlights harsh on the black water, crushed ice scattered over wet steel. The camera settles into a low forward glide along the dock past the trawler hull. One continuous camera move, no cuts."
+      "prompt": "The camera turns left away from the pond embankments and glides low across open water as dawn breaks into sunrise: the sky warming from deep blue to gold, the first sun catching the sea. Ahead a fishing harbour resolves in early morning light \u2014 steel trawlers moored along a concrete dock, Indian fishermen in bright workwear loading crushed ice and rigging gear on deck, coiled ropes and nets, gulls wheeling overhead, warm golden sunlight raking across the wet dock. The camera settles into a low forward glide along the dock past the trawler hull as the crew makes ready to sail. One continuous camera move, no cuts."
     },
     "a2": {
       "draft_720": {
@@ -77,10 +79,11 @@
         "end_frame_media": "20d19c3e-3cf0-4d2e-8a42-e3f5a6ebdf07"
       },
       "final_1080": {
-        "job_id": "2f11931d-41d3-40e5-95f8-b18983fb853f",
-        "status": "accepted"
+        "job_id": "38368014-9df6-41e0-9596-35c0378ab8ba",
+        "status": "accepted",
+        "note": "daylight v2 \u2014 steam-out, sunrise to full blue morning"
       },
-      "prompt": "Handheld camera on the deck of a longline fishing vessel on the open sea before dawn, heavy swell, the deck pitching under harsh floodlights, sea spray hitting the lens, the dark horizon tilting with the swell, a long fishing line running out over the stern into black water, cold blue-black ocean night. One continuous handheld shot, no cuts."
+      "prompt": "The fishing vessel casts off and steams out of the harbour in the early morning: the camera lifts from the dock aboard the moving trawler as it clears the breakwater, and the world brightens from golden sunrise into full blue morning on open water \u2014 sunlight breaking across the wet deck, spray glittering against the sun, seabirds wheeling behind the stern, Indian crew in bright workwear rigging longlines, the coastline falling away behind. Heavy swell builds, deep blue ocean under full sun by the end. One continuous shot, no cuts."
     },
     "a3": {
       "draft_720": {
@@ -88,20 +91,21 @@
         "status": "generating"
       },
       "final_1080": {
-        "job_id": "d329dddd-c6a1-4be9-b8a5-c4cd3a3e9c0f",
-        "status": "accepted"
+        "job_id": "e62eb1ea-2409-4ceb-913a-34c13a5d1ab0",
+        "status": "accepted",
+        "note": "daylight v2 \u2014 swordfish + yellowfin over the gunwale in sun-backlit spray; swordfish bill visible in hold shot"
       },
-      "prompt": "On the working deck of a fishing vessel under floodlights before dawn: large silver-blue pelagic fish, tuna and mackerel, are lifted over the gunwale, seawater pouring off their flanks, and laid straight into an open ice hold as crushed ice cascades down from a chute, breath steaming in the cold air, gloved crew seen only from behind at a distance, urgent professional work, no gore. One continuous shot, no cuts."
+      "prompt": "Broad daylight on the open sea, far from land, the deck pitching in deep blue swell under full sun: Indian fishermen haul the longline and a large swordfish comes over the gunwale \u2014 long smooth bill, whole and intact \u2014 followed by fat yellowfin tuna, seawater bursting off their flanks in sun-backlit spray, the fish sliding whole into the open ice hold as crushed ice cascades over them. Urgent, exhilarating, professional, no gore. One continuous shot, no cuts."
     },
     "a4": {
       "draft_720": {},
       "final_1080": {
-        "job_id": "e0527ab5-cd21-4c8c-8ef6-742fcd289685",
+        "job_id": "4007ae3c-77db-49e2-ac92-54c69197f2ca",
         "status": "accepted",
-        "note": "convergence on anchor2 verified"
+        "note": "v2 \u2014 golden run home, dusk transit, REVERSE dock at the lit bay at night; convergence on anchor2 verified"
       },
       "end_image": "anchor2",
-      "prompt": "Insulated crates of iced fish loaded into the back of a refrigerated truck at first light, the tailgate closing, then the truck's headlights sweeping a wet coastal road in light rain, and finally the truck reversing toward a seafood plant loading bay where clinical white light spills from a half-open roller shutter door onto wet concrete. One continuous sequence, ending square on the lit intake door."
+      "prompt": "The loaded fishing vessel runs home through golden afternoon light; crates of iced fish load into a refrigerated truck as the sun drops; the truck takes the coastal road from gold through dusk into night, then swings past the loading bay, stops, and reverses slowly backwards toward the lit intake door \u2014 white reverse lamps glowing, a worker guiding it back with hand signals \u2014 settling backed up against the bay. One continuous sequence, day fading to night, ending square on the lit intake door."
     },
     "b1": {
       "draft_720": {
@@ -191,15 +195,25 @@
         "note": "v2 \u2014 12s regeneration for a smoother port-to-globe ascent (gradual atmospheric transition beat); ends on globe still via end_image; 97 scrub frames"
       },
       "prompt": "The camera reverses out of an open refrigerated shipping container as the last pallets are loaded, the container doors swing shut and a gloved hand pulls the lock bar down, then the camera pulls back and lifts fast over a port container yard at dawn with a container ship at berth, rising through cloud until the curve of the earth appears, settling on a slowly rotating planet Earth seen from space with the Bay of Bengal glowing at the centre and thin gold trails arcing outward toward Europe, Japan, the Arabian Gulf and North America, deep black space. One continuous accelerating pull-back, no cuts."
+    },
+    "t2s": {
+      "final_1080": {
+        "job_id": "6c071c1f-bdca-471d-a58f-03e4d124dd3c",
+        "status": "accepted",
+        "note": "12s pond-path processing beat \u2014 Indian technician, four trays HOSO/HLSO/PUD/PTO, converges on t2 lab-bench end frame (verified near pixel-exact)"
+      },
+      "start_image": "t1_end_1080",
+      "end_image": "t2_end_1080",
+      "prompt": "Inside the seafood processing hall, an Indian technician in white coat, hairnet and blue gloves works fresh shrimp at a long stainless steel table; the camera dollies past four steel trays \u2014 whole head-on shell-on, headless shell-on, fully peeled, and peeled tail-on \u2014 the product getting cleaner tray by tray, then glides on into the residue-testing laboratory, settling on the lab bench. One continuous move, no cuts."
     }
   },
   "credits": {
     "start_balance": 1898,
     "cost_720_clip": 36,
     "cost_1080_clip": 72,
-    "end_balance": 380,
-    "total_spent": 1518,
-    "breakdown": "15 draft clips @36 = 540; 12 master clips @72 = 864; T4 v2 12s @108; 3 stills = 6"
+    "end_balance": 484,
+    "total_spent": 1914,
+    "breakdown": "draft pass 540; master pass 864; T4 12s v2 108; daylight ocean arc a1-a4 288; t2s 12s shrimp 108; stills 6"
   },
   "media_ids": {
     "anchor1": "450f3f2c-1ee4-45cb-b49b-23fd39cd4103",
