@@ -91,9 +91,9 @@
         "status": "generating"
       },
       "final_1080": {
-        "job_id": "bf23a2ee-bf8f-4709-820d-afe6e6c17999",
+        "job_id": "287f853a-5848-465c-bf9e-c0ccf84210b6",
         "status": "accepted",
-        "note": "v4 anti-merge re-roll \u2014 single fish in motion, swordfish (distinct body) as hold neighbour, explicit no-merge negatives; verified frame-by-frame through the lowering window. v3 rejected: lowered tuna merged with bedded fish."
+        "note": "v5 persistent-anchor staging \u2014 static camera locked above the hold in the end-frame composition, first fish visible and unchanged from frame 1 to end, yellowfin laid beside it; verified across six sample points, no ghosting. v4 rejected: hold neighbour dissolved mid-clip and re-materialised at the end lock."
       },
       "prompt": "Broad daylight on the open sea, far from land, the deck pitching in deep blue swell under full sun: Indian fishermen haul the longline and a large swordfish comes over the gunwale \u2014 long smooth bill, whole and intact \u2014 followed by fat yellowfin tuna, seawater bursting off their flanks in sun-backlit spray, the fish sliding whole into the open ice hold as crushed ice cascades over them. Urgent, exhilarating, professional, no gore. One continuous shot, no cuts."
     },
@@ -211,8 +211,8 @@
     "start_balance": 1898,
     "cost_720_clip": 36,
     "cost_1080_clip": 72,
-    "end_balance": 232,
-    "total_spent": 2166,
+    "end_balance": 160,
+    "total_spent": 2238,
     "breakdown": "draft pass 540; master pass 864; T4 12s v2 108; daylight ocean arc a1-a4 288; t2s 12s shrimp 108; stills 6"
   },
   "media_ids": {
